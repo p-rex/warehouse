@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: centos-priv
+  labels:
+spec:
+  containers:
+  - name: centos-priv
+    image: centos:latest
+    securityContext:
+      privileged: true
+    volumeMounts:
+    - mountPath: /host
+      name: noderoot
+    command: [ "tail", "-f", "/dev/null" ]
+  volumes:
+  - name: noderoot
+    hostPath:
+      path: /
