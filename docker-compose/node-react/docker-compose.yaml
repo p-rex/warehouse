@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: node-react
+    container_name: node
+    hostname: node
+    volumes:
+      - ./src:/usr/src/ # ローカルをコンテナ内にマウント
+    ports:
+      - "3000:3000" #react
+      - "8000:8000" #gatsby develop. You must use command "gatsby develop -H 0.0.0.0" to listen from all source IP.
+      - "9000:9000" #gatsby serve
+    stdin_open: true 
+    environment:
+      - CHOKIDAR_USEPOLLING=true #react hot reloading ; don't seem to work
+      - NODE_ENV=development  # gatsby hot reloading ; don't seem to work
+      - GATSBY_WEBPACK_PUBLICPATH=/ # gatsby hot reloading ; don't seem to work
+      - WATCHPACK_POLLING=true # react and gatsby hot reloading
+
+
+# creating environment memo for gatsby
+# npm install gatsby-source-filesystem gatsby-transformer-remark
+# npm install gatsby-plugin-image gatsby-plugin-sharp gatsby-transformer-sharp
