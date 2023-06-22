@@ -1,0 +1,19 @@
+# https://thesecmaster.com/step-by-step-procedure-to-install-apache-from-source-code-on-ubuntu/
+FROM ubuntu:20.04
+
+RUN apt update && \
+    apt install -y curl build-essential file && \
+    apt install -y build-essential libssl-dev libexpat-dev libpcre3-dev libapr1-dev libaprutil1-dev
+
+WORKDIR /usr/local/src/
+RUN curl -LO http://archive.apache.org/dist/httpd/httpd-2.4.49.tar.bz2 && \
+    tar -xf httpd-2.4.49.tar.bz2
+
+WORKDIR /usr/local/src/httpd-2.4.49
+
+RUN mkdir /usr/local/apache2.4.49 && \
+    ./configure -prefix=/usr/local/apache2.4.49 -enable-shared=max
+RUN make && make install
+
+WORKDIR /usr/local/apache2.4.49/
+CMD ["/usr/local/apache2.4.49/bin/apachectl","-DFOREGROUND"]
