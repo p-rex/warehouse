@@ -1,5 +1,5 @@
 # Getting events via Streaming API
-This script gets Falcon events via Streaming API and save it in local file.
+This script gets Falcon events via Streaming API and save them to a local file.
 
 # Usage
 1. Create an API key in Falcon console. Scope: `Event streams: Read`
@@ -9,3 +9,6 @@ This script gets Falcon events via Streaming API and save it in local file.
 ```shell
 curl -sSL https://raw.githubusercontent.com/p-rex/warehouse/main/CS_Script/StreamingAPI/getEvents.sh | bash -s config.env
 ```
+
+# Notes
+This script does not support refreshing session. Therefore, streaming will end after 30 minutes.
