@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: vuln-fshare
-        image: prex55/vuln_fshare:5.1
+        image: prex55/vuln_fshare:latest
         ports:
         - containerPort: 80
 ---
