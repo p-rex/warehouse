@@ -32,4 +32,4 @@ function searchFile($filename){
     echo '' > $status_flg_done
 }
 
-searchFile($Args[0])
+searchFile('white.png')
