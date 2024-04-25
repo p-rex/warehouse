@@ -1,6 +1,5 @@
 #!/bin/bash
 
-curl http://169.254.169.254/latest/meta-data/iam/security-credentials/ply-viper-ec2-role-4935a3a52f3
 
 AWS_IMDS_V1_CREDENTIAL_URL=http://169.254.169.254/latest/meta-data/iam/security-credentials/
 AWS_IAMROLE=`curl -s $AWS_IMDS_V1_CREDENTIAL_URL`
