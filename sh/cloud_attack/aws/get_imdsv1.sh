@@ -7,6 +7,6 @@ AWS_IAMROLE=`curl -s $AWS_IMDS_V1_CREDENTIAL_URL`
 AWS_CREDENTIAL_JSON=`curl -s ${AWS_IMDS_V1_CREDENTIAL_URL}${AWS_IAMROLE}`
 
 echo '--------- credential ---------'
-echo AWS_ACCESS_KEY_ID=`echo $AWS_CREDENTIAL_JSON | jq .AccessKeyId`
-echo AWS_SECRET_ACCESS_KEY=`echo $AWS_CREDENTIAL_JSON | jq .SecretAccessKey`
-echo AWS_SESSION_TOKEN=`echo $AWS_CREDENTIAL_JSON | jq .Token`
+echo 'export AWS_ACCESS_KEY_ID='`echo $AWS_CREDENTIAL_JSON | jq .AccessKeyId`
+echo 'export AWS_SECRET_ACCESS_KEY='`echo $AWS_CREDENTIAL_JSON | jq .SecretAccessKey`
+echo 'export AWS_SESSION_TOKEN='`echo $AWS_CREDENTIAL_JSON | jq .Token`
