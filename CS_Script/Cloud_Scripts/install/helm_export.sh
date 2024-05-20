@@ -6,6 +6,10 @@
 # export FALCON_CLIENT_SECRET=XXXXXXXXXX
 # export FALCON_CID=XXXXXXXXX-XX
 
+# Usage
+# source /dev/stdin <<< "$(curl -s URL)"
+
+
 
 
 if [ $FALCON_REGION = 'us-1' ]; then
