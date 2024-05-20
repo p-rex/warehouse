@@ -1,13 +1,16 @@
 #!/bin/bash
 
-# Create 12 environment variables
-# prerequsities
+## About 
+# This script creates 12 environment variables for helm installation
+
+
+## Prerequsities
 # export FALCON_CLIENT_ID=XXXXXXXXXXXX
 # export FALCON_CLIENT_SECRET=XXXXXXXXXX
 # export FALCON_CID=XXXXXXXXX-XX
 
-# Usage
-# source /dev/stdin <<< "$(curl -s URL)"
+## Usage
+# source /dev/stdin <<< "$(curl -s THIS_SCRIPT_URL)"
 
 
 
