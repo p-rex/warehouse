@@ -8,6 +8,7 @@
 # export FALCON_CLIENT_ID=XXXXXXXXXXXX
 # export FALCON_CLIENT_SECRET=XXXXXXXXXX
 # export FALCON_CID=XXXXXXXXX-XX
+# export $FALCON_REGION = 'us-1' or 'us-2'
 
 ## Usage
 # source /dev/stdin <<< "$(curl -s THIS_SCRIPT_URL)"
