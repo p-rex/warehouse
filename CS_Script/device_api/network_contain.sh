@@ -5,10 +5,10 @@
 
 
 ## Set variables
-FALCON_CLIENT_ID=XXXXXX
-FALCON_CLIENT_SECRET=YYYYYY
-FALCON_CLOUD_API=api.crowdstrike.com #api.us-2.crowdstrike.com
-TGT_AID=ZZZZZZZZ
+FALCON_CLIENT_ID=<API CLIENT ID>
+FALCON_CLIENT_SECRET=<API CLIENT SECRET>
+FALCON_CLOUD_API=<api.crowdstrike.com or api.us-2.crowdstrike.com >
+TGT_AID=<Agent ID>
 
 
 
