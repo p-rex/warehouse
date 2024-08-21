@@ -12,6 +12,6 @@ while True:
         decoded_body = body.decode('utf-8')
         print(decoded_body)
 
-    time.sleep(10)
+    time.sleep(sleep_sec)
 
 
