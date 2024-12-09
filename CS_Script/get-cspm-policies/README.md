@@ -1,6 +1,8 @@
 # Get CSPM Policies
 
-Get all cspm policies.
+This script gets all cspm policies and save it as csv.   
+**Note that the csv doesn't include custom policies**
+
 
 # Usage
 Create API credential with the following scope in Falcon console.
