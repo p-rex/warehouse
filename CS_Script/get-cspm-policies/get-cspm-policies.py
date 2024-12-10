@@ -3,6 +3,12 @@ import os
 import pandas as pd
 
 ##---------------------------------------------------
+## variables
+##---------------------------------------------------
+
+csv_filename = 'all_cspm_policies.csv'
+
+##---------------------------------------------------
 ## functions
 ##---------------------------------------------------
 
@@ -14,8 +20,6 @@ def writeToCSV(data, filename):
 ##---------------------------------------------------
 ## main
 ##---------------------------------------------------
-
-csv_filename = 'all_cspm_policies.csv'
 
 #Set API Credential
 falcon_client_id = os.environ['FALCON_CLIENT_ID']
