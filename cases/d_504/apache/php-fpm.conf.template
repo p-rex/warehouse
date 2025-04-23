@@ -1,0 +1,14 @@
+LoadModule proxy_module modules/mod_proxy.so
+LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so
+
+DocumentRoot "/usr/local/apache2/htdocs"
+
+<Directory "/usr/local/apache2/htdocs">
+    AllowOverride All
+    Require all granted
+</Directory>
+
+DirectoryIndex index.php
+
+# PHP-FPM ホスト名を環境変数で切り替え
+ProxyPassMatch "^/(.*\.php)$" "fcgi://${DOCKER_PHP_HOST}:9000/var/www/html/"
