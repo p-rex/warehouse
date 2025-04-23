@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  apache:
+    build: ./apache
+    ports:
+      - "8086:80"
+    depends_on:
+      - php
+    networks:
+      - appnet
+
+  php:
+    build: ./php
+    networks:
+      - appnet
+
+networks:
+  appnet:
