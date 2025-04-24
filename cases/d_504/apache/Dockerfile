@@ -2,7 +2,7 @@ FROM httpd:2.4
 
 # envsubst を使うために gettext をインストール
 RUN apt-get update && \
-    apt-get install -y gettext && \
+    apt-get install -y gettext procps && \
     rm -rf /var/lib/apt/lists/*
 
 COPY php-fpm.conf.template /usr/local/apache2/conf/extra/php-fpm.conf.template
