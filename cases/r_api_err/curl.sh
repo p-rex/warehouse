@@ -1,12 +1,18 @@
-from falconpy import ContainerImages
-import os
-import pandas as pd
+#!/bin/bash
 
 
-falcon_client_id = os.environ['FALCON_CLIENT_ID']
-falcon_client_secret = os.environ['FALCON_CLIENT_SECRET']
+FALCON_API_BEARER_TOKEN=$(curl \
+--silent \
+--header "Content-Type: application/x-www-form-urlencoded" \
+--data "client_id=${FALCON_CLIENT_ID}&client_secret=${FALCON_CLIENT_SECRET}" \
+--request POST \
+--url "https://$FALCON_CLOUD_API/oauth2/token" | \
+jq -r '.access_token')
+
+# echo $FALCON_API_BEARER_TOKEN
 
 
-falcon = ContainerImages(client_id=falcon_client_id, client_secret=falcon_client_secret)
-resp = falcon.get_combined_images(sort="first_seen", limit=1)
-print(resp)
+
+curl -X GET "https://$FALCON_CLOUD_API/container-security/combined/image-assessment/images/v1?limit=1" \
+    -H  "accept: application/json" \
+    -H  "authorization: Bearer $FALCON_API_BEARER_TOKEN"
